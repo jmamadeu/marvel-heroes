@@ -1,4 +1,4 @@
-import { memo, SVGProps } from "react"
+import { memo, SVGProps } from "react";
 
 const Logo = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -53,7 +53,7 @@ const Logo = (props: SVGProps<SVGSVGElement>) => (
       fill="#EFBC3F"
     />
   </svg>
-)
+);
 
-const LogoSVG = memo(Logo)
-export default LogoSVG
+const LogoSVG = memo(Logo);
+export { LogoSVG };
