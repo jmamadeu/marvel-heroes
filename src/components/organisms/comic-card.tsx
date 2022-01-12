@@ -2,9 +2,13 @@ import { ComicProps } from "~/models/comic";
 
 type ComicCardType = {
   comic: ComicProps;
+  onClick?: (id: ComicProps["id"]) => void;
 };
 
-export const ComicCard = ({ comic }: ComicCardType): JSX.Element => {
+export const ComicCard = ({
+  comic,
+  onClick = () => {},
+}: ComicCardType): JSX.Element => {
   return (
     <article className="bg-white w-50 p-4 rounded-tl-md rounded-tr-lg rounded-bl-lg rounded-br-md flex flex-col justify-between">
       <div>
@@ -21,7 +25,10 @@ export const ComicCard = ({ comic }: ComicCardType): JSX.Element => {
         </p>
       </div>
 
-      <button className="self-start bg-slate-300 p-2 rounded-md">
+      <button
+        className="self-start bg-slate-300 p-2 rounded-md"
+        onClick={() => onClick(comic.id)}
+      >
         see more
       </button>
     </article>
